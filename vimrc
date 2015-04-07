@@ -1,9 +1,14 @@
-set nu " Line numbers
-set showmatch " Show matching braces
-set ruler " Show position
-set nohls " No all-highlight search ._.
+set nu           " Line numbers
+set showmatch    " Show matching braces
+set ruler        " Show position
+set laststatus=2 " Always display the status line
+set nohls        " No all-highlight search
 
 syntax enable
+
+if filereadable(expand("~/.vimrc.bundles"))
+    source ~/.vimrc.bundles
+endif
 
 " Fix backups
 set backspace=indent,eol,start
@@ -44,33 +49,8 @@ imap <C-k> <ESC><C-k>i
 map <C-l> :tabn<CR>
 imap <C-l> <ESC><C-l>i
 
-" See Vundle's github page
-set nocompatible " vi -IMPROVED :D
-filetype off
-
-let mapleader = ","
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-Plugin 'ervandew/supertab'
-Plugin 'wting/rust.vim'
-
-" Command T needs vim compiled with ruby support :c
-" Plugin 'wincent/command-t'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-
-map so :CommandT<CR>
-map st <C-t>so
-
 map <C-w>n :vsplit<CR>
 
-syntax enable
+if filereadable(expand("~/.vimrc.local"))
+    source ~/.vimrc.local
+endif
