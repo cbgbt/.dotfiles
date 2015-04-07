@@ -1,0 +1,9 @@
+[user]
+    name = Sean Kelly
+    email = sean.kelly.2992@gmail.com
+[github]
+    user = cbgbt
+[core]
+    editor = vim
+[color]
+    ui = auto
