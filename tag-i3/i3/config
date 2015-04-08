@@ -154,3 +154,7 @@ bar {
 bindsym $mod+p exec "~/bin/screen_lock"
 bindsym $mod+Shift+p exec "~/bin/screen_lock"
 exec xautolock -time 15 -locker "~/bin/screen_lock"&
+
+# Volume control
+bindsym $mod+n exec /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ -- '+3%'
+bindsym $mod+m exec /usr/bin/pactl set-sink-volume @DEFAULT_SINK@ -- '-3%'
